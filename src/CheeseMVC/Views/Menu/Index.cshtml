@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<CheeseMVC.Models.Menu>
+
+
+<div class="container">
+    <h2>Menus</h2>
+    <div class="list-group">
+        @foreach (var menu in Model)
+        {
+            <a asp-controller="Menu" asp-action="ViewMenu" asp-route-id="@menu.ID" class="list-group-item">@menu.Name</a>
+        }
+    </div>
+</div>
+<p><a asp-controller="Menu" asp-action="Add">Add</a></p>
